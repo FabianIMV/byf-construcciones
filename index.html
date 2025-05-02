@@ -764,18 +764,18 @@
         }
         
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-        }
-        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.contact-info {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
         .contact-title {
             font-size: 1.8rem;
             margin-bottom: 30px;
@@ -785,7 +785,7 @@
         
         .contact-title::after {
             content: '';
-            position: absolute;
+            position: relative;
             bottom: 0;
             left: 0;
             width: 50px;
