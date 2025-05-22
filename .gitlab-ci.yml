@@ -1,13 +1,9 @@
-# Simple configuration for static HTML
-stages:
-  - deploy
-
 pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -r * public/ 2>/dev/null || :
-    - rm public/.gitlab-ci.yml 2>/dev/null || :
+    - cp -r * public/ || true
+    - rm -f public/.gitlab-ci.yml
   artifacts:
     paths:
       - public
