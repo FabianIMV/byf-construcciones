@@ -1,30 +1,15 @@
-image: node:18
-
+# Simple configuration for static HTML
 stages:
-  - build
   - deploy
-
-cache:
-  paths:
-    - node_modules/
-
-build:
-  stage: build
-  script:
-    - npm install
-    - npm run build
-  artifacts:
-    paths:
-      - dist/  # o build/ según tu app
-    expire_in: 1 hour
 
 pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -r dist/* public/  # o build/* según tu app
+    - cp -r * public/ 2>/dev/null || :
+    - rm public/.gitlab-ci.yml 2>/dev/null || :
   artifacts:
     paths:
       - public
   only:
-    - main  # o master
+    - main
