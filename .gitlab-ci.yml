@@ -1,6 +1,6 @@
 pages:
   stage: deploy
-  script:
+  script :
     - mkdir public
     - cp -r * public/ || true
     - rm -f public/.gitlab-ci.yml
