@@ -1,0 +1,30 @@
+image: node:18
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/  # o build/ según tu app
+    expire_in: 1 hour
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r dist/* public/  # o build/* según tu app
+  artifacts:
+    paths:
+      - public
+  only:
+    - main  # o master
