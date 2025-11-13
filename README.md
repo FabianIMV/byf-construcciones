@@ -13,12 +13,92 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
 
+# ByF Construcciones
+
+Sitio web de ByF Construcciones - Empresa dedicada a la construcción y remodelación de espacios residenciales y comerciales.
+
+## 🚀 Características
+
+- ✨ Diseño moderno y responsivo
+- 🎨 Animaciones fluidas con AOS
+- 📱 Totalmente adaptable a dispositivos móviles
+- 🖼️ Galería de proyectos con filtros
+- 💬 Sección de testimonios
+- 🔄 Comparador antes/después interactivo
+
+## 📁 Estructura del Proyecto
+
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/fabianimv1/byf-construcciones.git
-git branch -M main
-git push -uf origin main
+byf-construcciones/
+├── index.html          # Estructura HTML principal
+├── styles.css          # Estilos CSS
+├── script.js           # JavaScript interactivo
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # Configuración de GitHub Actions
+└── assets/             # Imágenes y recursos
 ```
+
+## 🛠️ Tecnologías Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Font Awesome (iconos)
+- AOS (animaciones)
+- GitHub Pages (hosting)
+
+## 📦 Instalación Local
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/FabianIMV/byf-construcciones.git
+```
+
+2. Navega al directorio:
+```bash
+cd byf-construcciones
+```
+
+3. Abre `index.html` en tu navegador o usa un servidor local:
+```bash
+# Con Python 3
+python -m http.server 8000
+
+# Con Node.js (http-server)
+npx http-server
+```
+
+## 🌐 Deployment
+
+El sitio se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
+
+### URL del sitio
+Una vez configurado, estará disponible en:
+`https://fabianimv.github.io/byf-construcciones/`
+
+## 📝 Configuración de GitHub Pages
+
+1. Ve a Settings > Pages en tu repositorio
+2. En "Source", selecciona "GitHub Actions"
+3. El workflow se ejecutará automáticamente en cada push
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios que te gustaría realizar.
+
+## 📄 Licencia
+
+© 2025 ByF Construcciones. Todos los derechos reservados.
+
+## 📞 Contacto
+
+- Teléfono: +569 7987 3473
+- Email: info@byfconstrucciones.com
+
+---
+
+Desarrollado con ❤️ para ByF Construcciones
 
 ## Integrate with your tools
 
