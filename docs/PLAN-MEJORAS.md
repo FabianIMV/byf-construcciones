@@ -25,18 +25,20 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 
 ## Fases
 
-### Fase 1 — Fotos reales en lugar de imágenes IA ✅ (este PR)
+### Fase 1 — Fotos reales en lugar de imágenes IA ✅ (mergeada)
 - Hero, "Nosotros", servicios, antes/después y galería con fotos reales.
 - Galería ampliada con categorías nuevas (techumbres, cercos/portones).
 - Testimonios: se quitan los rostros IA (avatar con iniciales).
 - Se eliminan las imágenes IA que quedan sin uso.
 - Algunas fotos de `obras/` quedan reservadas (sin usar) para la galería con lightbox de la Fase 3.
 
-### Fase 2 — Contenido y confianza (Haiku)
-- Revisar textos: "+15 años", rating 4.9/50 reseñas del schema (solo si es real).
-- Testimonios reales (nombre, comuna) o quitar la sección.
-- README limpio (borrar plantilla GitLab).
-- `og:url`/`twitter:url` con el dominio del `CNAME` (la `og:image` ya se actualizó en la Fase 1).
+### Fase 2 — Contenido y confianza (Haiku) ✅
+- Canonical, `og:url` y `twitter:url` apuntan al dominio `https://byfconstrucciones.cl/`.
+- Schema `GeneralContractor` con dirección, horario y área de servicio.
+- Se quitó `aggregateRating` (reseñas no verificables).
+- README limpio (se eliminó la plantilla de GitLab).
+- `robots.txt` y `sitemap.xml` agregados.
+- Pendiente del dueño: confirmar "+15 años" y entregar testimonios reales (nombre y comuna).
 
 ### Fase 3 — Galería y lightbox (Sonnet)
 - Filtros acordes a las categorías reales (Cocinas, Techumbres, Cercos, Revestimientos, Comercial).
@@ -48,7 +50,7 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Actualizar Font Awesome 6.0.0-beta3 a una versión estable; quitar CSS/JS no usado.
 
 ### Fase 5 — SEO local y conversión (Sonnet + Haiku)
-- Schema `LocalBusiness` completo (comuna/área de servicio, horario), `sitemap.xml`, `robots.txt`.
+- Schema `LocalBusiness` completo (comuna/área de servicio, horario).
 - Formulario de contacto funcional (Formspree o WhatsApp) y botón flotante de WhatsApp.
 
 ### Fase 6 — Accesibilidad y QA (Haiku)
