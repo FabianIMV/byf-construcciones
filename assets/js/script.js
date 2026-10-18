@@ -15,6 +15,17 @@ try {
     });
 } catch (error) {
     console.warn('AOS initialization failed:', error);
+    // Si AOS no cargó (CDN bloqueado), mostrar todo en vez de dejarlo invisible
+    document.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
+}
+
+// Recalcula las posiciones de AOS cuando cambia el alto de la página
+// (galería que oculta/muestra tarjetas, fotos que terminan de cargar)
+let aosRefreshTimer;
+function refreshAOS() {
+    if (typeof AOS === 'undefined') return;
+    clearTimeout(aosRefreshTimer);
+    aosRefreshTimer = setTimeout(() => AOS.refresh(), 100);
 }
 
 // ========================================
@@ -106,6 +117,7 @@ function applyProjectsView() {
         projectsMoreBtn.hidden = projectsExpanded || matching <= INITIAL_PROJECTS;
     }
 
+    refreshAOS();
     return shown;
 }
 
@@ -497,6 +509,8 @@ window.addEventListener('load', () => {
     if (loading) {
         loading.classList.add('hidden');
     }
+
+    refreshAOS();
 
     // Lazy load images
     const images = document.querySelectorAll('img[loading="lazy"]');
