@@ -33,10 +33,12 @@
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     
+    <!-- Precarga de la imagen principal (LCP) -->
+    <link rel="preload" as="image" href="assets/images/obras/hero-porton.webp" type="image/webp" imagesrcset="assets/images/obras/hero-porton-800.webp 800w, assets/images/obras/hero-porton.webp 1600w" imagesizes="100vw" fetchpriority="high">
+
     <!-- Stylesheets -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
     
@@ -71,7 +73,10 @@
         <div class="container">
             <div class="header-container">
                 <div class="logo">
-                    <img src="assets/images/icon.png" alt="BYF Logo">
+                    <picture>
+                        <source type="image/webp" srcset="assets/images/icon-256.webp">
+                        <img src="assets/images/icon-256.png" width="167" height="256" alt="BYF Logo">
+                    </picture>
                     <div class="logo-text">
                         <h1>BYF</h1>
                         <span>CONSTRUCCIONES</span>
@@ -102,7 +107,10 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="assets/images/obras/hero-porton.jpg" alt="Portón de madera y metal instalado por ByF Construcciones" class="hero-bg" loading="eager">
+        <picture>
+            <source type="image/webp" srcset="assets/images/obras/hero-porton-800.webp 800w, assets/images/obras/hero-porton.webp 1600w" sizes="100vw">
+            <img src="assets/images/obras/hero-porton.jpg" width="1600" height="700" alt="Portón de madera y metal instalado por ByF Construcciones" class="hero-bg" fetchpriority="high">
+        </picture>
         <div class="container">
             <div class="hero-content" data-aos="fade-right" data-aos-delay="200">
                 <h3 class="hero-subtitle">Expertos en Construcción</h3>
@@ -128,7 +136,10 @@
         <div class="container">
             <div class="about-container">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="assets/images/obras/cocinas/cocina-terminada-frontal.jpg" alt="Cocina terminada con muebles y cubierta nueva, trabajo de ByF Construcciones" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-terminada-frontal-800.webp 800w, assets/images/obras/cocinas/cocina-terminada-frontal.webp 960w" sizes="(max-width: 768px) 100vw, 560px">
+                        <img src="assets/images/obras/cocinas/cocina-terminada-frontal.jpg" width="960" height="1280" alt="Cocina terminada con muebles y cubierta nueva, trabajo de ByF Construcciones" loading="lazy">
+                    </picture>
                 </div>
                 <div class="about-content" data-aos="fade-left">
                     <span class="about-subtitle">Acerca de Nosotros</span>
@@ -196,7 +207,10 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-image">
-                        <img src="assets/images/obras/cercos-portones/porton-madera-metal.jpg" alt="Portón de madera y metal en una vivienda" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/porton-madera-metal-800.webp 800w, assets/images/obras/cercos-portones/porton-madera-metal.webp 1600w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/porton-madera-metal.jpg" width="1600" height="900" alt="Portón de madera y metal en una vivienda" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Construcción Residencial</h3>
@@ -207,7 +221,10 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-image">
-                        <img src="assets/images/obras/cocinas/cocina-peninsula.jpg" alt="Cocina remodelada con península" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-peninsula-800.webp 800w, assets/images/obras/cocinas/cocina-peninsula.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-peninsula.jpg" width="960" height="1280" alt="Cocina remodelada con península" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Remodelaciones</h3>
@@ -218,7 +235,10 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-image">
-                        <img src="assets/images/obras/comercial/banos-comerciales.jpg" alt="Baños comerciales terminados" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/comercial/banos-comerciales-800.webp 800w, assets/images/obras/comercial/banos-comerciales.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/comercial/banos-comerciales.jpg" width="1200" height="1600" alt="Baños comerciales terminados" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Construcción Comercial</h3>
@@ -229,7 +249,10 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-image">
-                        <img src="assets/images/obras/cocinas/cocina-horno-empotrado.jpg" alt="Cocina con horno empotrado en mueble a medida" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-horno-empotrado-800.webp 800w, assets/images/obras/cocinas/cocina-horno-empotrado.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-horno-empotrado.jpg" width="960" height="1280" alt="Cocina con horno empotrado en mueble a medida" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Diseño Arquitectónico</h3>
@@ -240,7 +263,10 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-image">
-                        <img src="assets/images/obras/interiores/revestimiento-madera.jpg" alt="Revestimiento interior de madera" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/interiores/revestimiento-madera-800.webp 800w, assets/images/obras/interiores/revestimiento-madera.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/interiores/revestimiento-madera.jpg" width="1200" height="1600" alt="Revestimiento interior de madera" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Diseño de Interiores</h3>
@@ -251,7 +277,10 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-image">
-                        <img src="assets/images/obras/techumbres/techumbre-hojalateria.jpg" alt="Hojalatería y mantención de techumbre" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/techumbres/techumbre-hojalateria-800.webp 800w, assets/images/obras/techumbres/techumbre-hojalateria.webp 1600w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/techumbres/techumbre-hojalateria.jpg" width="1600" height="721" alt="Hojalatería y mantención de techumbre" loading="lazy">
+                        </picture>
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Mantenimiento</h3>
@@ -282,7 +311,10 @@
             <div class="projects-grid">
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-cocina-1.jpeg" alt="Renovación de Cocina Moderna" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-cocina-1-800.webp 800w, assets/images/projects/renovacion-cocina-1.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-cocina-1.jpeg" width="960" height="1280" alt="Renovación de Cocina Moderna" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Renovación de Cocina</h3>
                             <span class="project-category">Cocinas</span>
@@ -296,7 +328,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-cocina-2.jpeg" alt="Remodelación Cocina Integral" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-cocina-2-800.webp 800w, assets/images/projects/renovacion-cocina-2.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-cocina-2.jpeg" width="960" height="1280" alt="Remodelación Cocina Integral" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cocina Integral</h3>
                             <span class="project-category">Cocinas</span>
@@ -310,7 +345,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-fachada-porton.jpeg" alt="Renovación Fachada y Portón" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-fachada-porton-800.webp 800w, assets/images/projects/renovacion-fachada-porton.webp 1198w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-fachada-porton.jpeg" width="1198" height="1600" alt="Renovación Fachada y Portón" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Fachada y Portón</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -324,7 +362,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-porton.jpeg" alt="Instalación de Portón" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-porton-800.webp 800w, assets/images/projects/renovacion-porton.webp 1600w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-porton.jpeg" width="1600" height="900" alt="Instalación de Portón" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Portón Residencial</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -338,7 +379,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-escaleras.jpeg" alt="Renovación de Escaleras" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-escaleras.webp 370w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-escaleras.jpeg" width="370" height="461" alt="Renovación de Escaleras" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Escaleras Modernas</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -352,7 +396,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/projects/renovacion-piso.jpeg" alt="Renovación de Piso" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/renovacion-piso-800.webp 800w, assets/images/projects/renovacion-piso.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/renovacion-piso.jpeg" width="1200" height="1600" alt="Renovación de Piso" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Piso Cerámico</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -366,7 +413,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="otros">
                     <div class="project-image">
-                        <img src="assets/images/projects/baños-de-mall.jpeg" alt="Baños Comerciales" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/projects/baños-de-mall-800.webp 800w, assets/images/projects/baños-de-mall.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/projects/baños-de-mall.jpeg" width="1200" height="1600" alt="Baños Comerciales" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Baños Comerciales</h3>
                             <span class="project-category">Otros</span>
@@ -380,7 +430,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/obras/cocinas/cocina-muebles-oscuros-1.jpg" alt="Cocina con muebles oscuros" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-muebles-oscuros-1-800.webp 800w, assets/images/obras/cocinas/cocina-muebles-oscuros-1.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-muebles-oscuros-1.jpg" width="960" height="1280" alt="Cocina con muebles oscuros" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cocina con muebles oscuros</h3>
                             <span class="project-category">Cocinas</span>
@@ -394,7 +447,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/obras/cocinas/cocina-peninsula.jpg" alt="Cocina con península" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-peninsula-800.webp 800w, assets/images/obras/cocinas/cocina-peninsula.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-peninsula.jpg" width="960" height="1280" alt="Cocina con península" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cocina con península</h3>
                             <span class="project-category">Cocinas</span>
@@ -408,7 +464,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="techumbres">
                     <div class="project-image">
-                        <img src="assets/images/obras/techumbres/tejas-detalle.jpg" alt="Detalle de tejas en cambio de techumbre" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/techumbres/tejas-detalle-800.webp 800w, assets/images/obras/techumbres/tejas-detalle.webp 1280w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/techumbres/tejas-detalle.jpg" width="1280" height="720" alt="Detalle de tejas en cambio de techumbre" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cambio de techumbre</h3>
                             <span class="project-category">Techumbres</span>
@@ -422,7 +481,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="techumbres">
                     <div class="project-image">
-                        <img src="assets/images/obras/techumbres/techumbre-canal.jpg" alt="Canal de aguas lluvias instalado en techumbre" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/techumbres/techumbre-canal-800.webp 800w, assets/images/obras/techumbres/techumbre-canal.webp 1496w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/techumbres/techumbre-canal.jpg" width="1496" height="1496" alt="Canal de aguas lluvias instalado en techumbre" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Hojalatería y canales</h3>
                             <span class="project-category">Techumbres</span>
@@ -436,7 +498,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/obras/cercos-portones/cerco-madera-jardin.jpg" alt="Cerco de madera y metal frente a la calle" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/cerco-madera-jardin-800.webp 800w, assets/images/obras/cercos-portones/cerco-madera-jardin.webp 1198w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/cerco-madera-jardin.jpg" width="1198" height="1600" alt="Cerco de madera y metal frente a la calle" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cerco de madera y metal</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -450,7 +515,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/obras/cercos-portones/porton-interior.jpg" alt="Portón corredera de madera y metal" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/porton-interior-800.webp 800w, assets/images/obras/cercos-portones/porton-interior.webp 1600w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/porton-interior.jpg" width="1600" height="900" alt="Portón corredera de madera y metal" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Portón corredera de madera</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -464,7 +532,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/obras/revestimientos/ceramica-muros-ventana.jpg" alt="Revestimiento cerámico en muros junto a ventana" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/revestimientos/ceramica-muros-ventana-800.webp 800w, assets/images/obras/revestimientos/ceramica-muros-ventana.webp 1599w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/revestimientos/ceramica-muros-ventana.jpg" width="1599" height="899" alt="Revestimiento cerámico en muros junto a ventana" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Revestimiento cerámico</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -478,7 +549,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/obras/pisos/piso-porcelanato.jpg" alt="Piso de porcelanato instalado" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/pisos/piso-porcelanato-800.webp 800w, assets/images/obras/pisos/piso-porcelanato.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/pisos/piso-porcelanato.jpg" width="1200" height="1600" alt="Piso de porcelanato instalado" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Piso porcelanato</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -492,7 +566,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/obras/interiores/revestimiento-madera.jpg" alt="Revestimiento de madera en interior" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/interiores/revestimiento-madera-800.webp 800w, assets/images/obras/interiores/revestimiento-madera.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/interiores/revestimiento-madera.jpg" width="1200" height="1600" alt="Revestimiento de madera en interior" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Revestimiento de madera</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -506,7 +583,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="otros">
                     <div class="project-image">
-                        <img src="assets/images/obras/electricidad/tablero-electrico.jpg" alt="Tablero eléctrico instalado" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/electricidad/tablero-electrico-800.webp 800w, assets/images/obras/electricidad/tablero-electrico.webp 899w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/electricidad/tablero-electrico.jpg" width="899" height="1599" alt="Tablero eléctrico instalado" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Tablero eléctrico</h3>
                             <span class="project-category">Otros</span>
@@ -520,7 +600,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="otros">
                     <div class="project-image">
-                        <img src="assets/images/obras/fachadas/fachada-andamio-bajada-aguas.jpg" alt="Fachada con andamio y bajadas de aguas lluvias" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/fachadas/fachada-andamio-bajada-aguas-800.webp 800w, assets/images/obras/fachadas/fachada-andamio-bajada-aguas.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/fachadas/fachada-andamio-bajada-aguas.jpg" width="1200" height="1600" alt="Fachada con andamio y bajadas de aguas lluvias" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Fachada y bajadas de agua</h3>
                             <span class="project-category">Otros</span>
@@ -534,7 +617,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/obras/cocinas/cocina-terminada-lateral.jpg" alt="Cocina terminada vista lateral" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-terminada-lateral-800.webp 800w, assets/images/obras/cocinas/cocina-terminada-lateral.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-terminada-lateral.jpg" width="960" height="1280" alt="Cocina terminada vista lateral" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cocina terminada</h3>
                             <span class="project-category">Cocinas</span>
@@ -548,7 +634,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="cocinas">
                     <div class="project-image">
-                        <img src="assets/images/obras/cocinas/cocina-muebles-oscuros-2.jpg" alt="Cocina con muebles oscuros y cubierta" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-muebles-oscuros-2-800.webp 800w, assets/images/obras/cocinas/cocina-muebles-oscuros-2.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cocinas/cocina-muebles-oscuros-2.jpg" width="960" height="1280" alt="Cocina con muebles oscuros y cubierta" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cocina con muebles oscuros</h3>
                             <span class="project-category">Cocinas</span>
@@ -562,7 +651,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/obras/cercos-portones/cerco-madera-calle.jpg" alt="Cerco de madera con estructura metálica frente a la calle" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/cerco-madera-calle-800.webp 800w, assets/images/obras/cercos-portones/cerco-madera-calle.webp 1198w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/cerco-madera-calle.jpg" width="1198" height="1600" alt="Cerco de madera con estructura metálica frente a la calle" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cerco de madera frente a la calle</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -576,7 +668,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/obras/cercos-portones/porton-madera-metal-2.jpg" alt="Portón de madera con estructura metálica" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/porton-madera-metal-2-800.webp 800w, assets/images/obras/cercos-portones/porton-madera-metal-2.webp 1600w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/porton-madera-metal-2.jpg" width="1600" height="900" alt="Portón de madera con estructura metálica" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Portón de madera y metal</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -590,7 +685,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="cercos">
                     <div class="project-image">
-                        <img src="assets/images/obras/cercos-portones/cerco-madera-acceso.jpg" alt="Cerco de madera junto al acceso de una vivienda" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/cercos-portones/cerco-madera-acceso-800.webp 800w, assets/images/obras/cercos-portones/cerco-madera-acceso.webp 1198w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/cercos-portones/cerco-madera-acceso.jpg" width="1198" height="1600" alt="Cerco de madera junto al acceso de una vivienda" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Cerco de madera en acceso</h3>
                             <span class="project-category">Cercos y portones</span>
@@ -604,7 +702,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="otros">
                     <div class="project-image">
-                        <img src="assets/images/obras/fachadas/fachada-andamio.jpg" alt="Fachada de una vivienda con andamio en obra" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/fachadas/fachada-andamio-800.webp 800w, assets/images/obras/fachadas/fachada-andamio.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/fachadas/fachada-andamio.jpg" width="1200" height="1600" alt="Fachada de una vivienda con andamio en obra" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Trabajos en fachada</h3>
                             <span class="project-category">Otros</span>
@@ -618,7 +719,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/obras/pisos/piso-ceramico.jpg" alt="Piso cerámico instalado" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/pisos/piso-ceramico-800.webp 800w, assets/images/obras/pisos/piso-ceramico.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/pisos/piso-ceramico.jpg" width="1200" height="1600" alt="Piso cerámico instalado" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Piso cerámico</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -632,7 +736,10 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="revestimientos">
                     <div class="project-image">
-                        <img src="assets/images/obras/revestimientos/ceramica-en-obra-2.jpg" alt="Instalación de revestimiento cerámico en muros durante la obra" loading="lazy">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/obras/revestimientos/ceramica-en-obra-2-800.webp 800w, assets/images/obras/revestimientos/ceramica-en-obra-2.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                            <img src="assets/images/obras/revestimientos/ceramica-en-obra-2.jpg" width="1200" height="1600" alt="Instalación de revestimiento cerámico en muros durante la obra" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <h3 class="project-title">Revestimiento cerámico en obra</h3>
                             <span class="project-category">Revestimientos y pisos</span>
@@ -660,10 +767,16 @@
                     <h3 class="comparison-title">Cocina</h3>
                     <div class="comparison">
                         <div class="before-image">
-                            <img src="assets/images/obras/cocinas/cocina-antes.jpg" alt="Cocina antes de la remodelación" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-antes-800.webp 800w, assets/images/obras/cocinas/cocina-antes.webp 1599w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/cocinas/cocina-antes.jpg" width="1599" height="899" alt="Cocina antes de la remodelación" loading="lazy">
+                            </picture>
                         </div>
                         <div class="after-image">
-                            <img src="assets/images/obras/cocinas/cocina-terminada-refrigerador.jpg" alt="Cocina después de la remodelación" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/cocinas/cocina-terminada-refrigerador-800.webp 800w, assets/images/obras/cocinas/cocina-terminada-refrigerador.webp 960w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/cocinas/cocina-terminada-refrigerador.jpg" width="960" height="1280" alt="Cocina después de la remodelación" loading="lazy">
+                            </picture>
                         </div>
                         <div class="slider">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -678,10 +791,16 @@
                     <h3 class="comparison-title">Revestimiento cerámico</h3>
                     <div class="comparison">
                         <div class="before-image">
-                            <img src="assets/images/obras/revestimientos/ceramica-en-obra-1.jpg" alt="Muros antes de la instalación del revestimiento cerámico" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/revestimientos/ceramica-en-obra-1-800.webp 800w, assets/images/obras/revestimientos/ceramica-en-obra-1.webp 1200w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/revestimientos/ceramica-en-obra-1.jpg" width="1200" height="1600" alt="Muros antes de la instalación del revestimiento cerámico" loading="lazy">
+                            </picture>
                         </div>
                         <div class="after-image">
-                            <img src="assets/images/obras/revestimientos/ceramica-muros-terminada.jpg" alt="Muros con revestimiento cerámico terminado" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/revestimientos/ceramica-muros-terminada-800.webp 800w, assets/images/obras/revestimientos/ceramica-muros-terminada.webp 899w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/revestimientos/ceramica-muros-terminada.jpg" width="899" height="1599" alt="Muros con revestimiento cerámico terminado" loading="lazy">
+                            </picture>
                         </div>
                         <div class="slider">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -696,10 +815,16 @@
                     <h3 class="comparison-title">Techumbre</h3>
                     <div class="comparison">
                         <div class="before-image">
-                            <img src="assets/images/obras/techumbres/techumbre-estructura-antes.jpg" alt="Estructura de techumbre antes del cambio" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/techumbres/techumbre-estructura-antes-800.webp 800w, assets/images/obras/techumbres/techumbre-estructura-antes.webp 899w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/techumbres/techumbre-estructura-antes.jpg" width="899" height="1599" alt="Estructura de techumbre antes del cambio" loading="lazy">
+                            </picture>
                         </div>
                         <div class="after-image">
-                            <img src="assets/images/obras/techumbres/techumbre-terminada.jpg" alt="Techumbre nueva terminada" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="assets/images/obras/techumbres/techumbre-terminada-800.webp 800w, assets/images/obras/techumbres/techumbre-terminada.webp 1599w" sizes="(max-width: 768px) 100vw, 400px">
+                                <img src="assets/images/obras/techumbres/techumbre-terminada.jpg" width="1599" height="899" alt="Techumbre nueva terminada" loading="lazy">
+                            </picture>
                         </div>
                         <div class="slider">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -893,8 +1018,8 @@
     </a>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>

@@ -39,16 +39,21 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - `robots.txt` y `sitemap.xml` agregados.
 - Pendiente del dueño: confirmar "+15 años" y entregar testimonios reales (nombre y comuna).
 
-### Fase 3 — Galería y lightbox (Sonnet) ✅
+### Fase 3 — Galería y lightbox (Sonnet) ✅ (en main)
 - Filtros acordes a las obras reales: Cocinas, Techumbres, Cercos y portones, Revestimientos y pisos, Otros.
 - Galería ampliada a 26 fotos reales, con categorías reasignadas según la foto.
 - Lightbox accesible propio (`role="dialog"`, foco gestionado, Escape, flechas, swipe táctil, contador y navegación solo entre las fotos visibles según el filtro).
 - `aria-label` en los botones de WhatsApp y de foto ampliada.
 - Antes/Después corregido: "Antes" a la izquierda y "Después" a la derecha.
 
-### Fase 4 — Rendimiento (Sonnet)
-- Versiones WebP + `srcset` (800/1600 px), `width/height` para evitar saltos.
-- Actualizar Font Awesome 6.0.0-beta3 a una versión estable; quitar CSS/JS no usado.
+### Fase 4 — Rendimiento (Sonnet) ✅
+- Todas las fotos en `<picture>` con WebP (`-800.webp` 800w y `.webp` 1600w) y JPG como respaldo; `sizes` ajustado a cada sección.
+- `width`/`height` intrínsecos en cada `<img>`; el CSS sigue controlando el tamaño (`picture { display: contents }`).
+- Hero con `fetchpriority="high"` y `<link rel="preload">` de la imagen WebP.
+- Logo optimizado (`icon-256.webp`/`.png`, 167x256) en lugar de `icon.png` (219 KB); se elimina el archivo original.
+- Font Awesome 6.0.0-beta3 actualizado a 6.5.2 estable (con `crossorigin` y `referrerpolicy`).
+- Se quita el `preconnect` a Google Fonts, que no se usaba (el sitio usa fuentes del sistema).
+- `aos.js` y `script.js` con `defer`.
 
 ### Fase 5 — SEO local y conversión (Sonnet + Haiku)
 - Schema `LocalBusiness` completo (comuna/área de servicio, horario).

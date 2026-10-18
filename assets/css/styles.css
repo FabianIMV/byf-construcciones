@@ -1451,3 +1451,8 @@ header.scrolled {
         font-size: 0.9rem;
     }
 }
+
+/* <picture> no debe alterar el layout: el <img> interno sigue mandando */
+picture {
+    display: contents;
+}
