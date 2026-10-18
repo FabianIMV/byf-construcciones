@@ -158,6 +158,170 @@ filterBtns.forEach(btn => {
 });
 
 // ========================================
+// LIGHTBOX
+// ========================================
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.setAttribute('role', 'dialog');
+lightbox.setAttribute('aria-modal', 'true');
+lightbox.setAttribute('aria-label', 'Galería de fotos ampliada');
+lightbox.setAttribute('aria-hidden', 'true');
+lightbox.innerHTML = `
+    <button type="button" class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Foto anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+    <figure class="lightbox-figure">
+        <img class="lightbox-img" src="" alt="">
+        <figcaption class="lightbox-caption">
+            <span class="lightbox-title"></span>
+            <span class="lightbox-counter" aria-live="polite"></span>
+        </figcaption>
+    </figure>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Foto siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('.lightbox-img');
+const lightboxTitle = lightbox.querySelector('.lightbox-title');
+const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+const lightboxNext = lightbox.querySelector('.lightbox-next');
+
+let lightboxItems = [];
+let lightboxIndex = 0;
+let lightboxTrigger = null;
+let lightboxPreviousOverflow = '';
+
+function getVisibleProjectCards() {
+    return Array.from(projectCards).filter(card => card.style.display !== 'none');
+}
+
+function renderLightbox() {
+    const card = lightboxItems[lightboxIndex];
+    if (!card) return;
+
+    const img = card.querySelector('.project-image img');
+    const zoomLink = card.querySelector('.project-zoom');
+    const titleEl = card.querySelector('.project-title');
+
+    lightboxImg.src = zoomLink ? zoomLink.getAttribute('href') : img.src;
+    lightboxImg.alt = img ? img.alt : '';
+    lightboxTitle.textContent = titleEl ? titleEl.textContent : '';
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxItems.length}`;
+
+    const single = lightboxItems.length < 2;
+    lightboxPrev.hidden = single;
+    lightboxNext.hidden = single;
+}
+
+function openLightbox(card, trigger) {
+    lightboxItems = getVisibleProjectCards();
+    lightboxIndex = Math.max(0, lightboxItems.indexOf(card));
+    lightboxTrigger = trigger || null;
+    renderLightbox();
+
+    lightboxPreviousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightboxClose.focus();
+}
+
+function closeLightbox() {
+    if (!lightbox.classList.contains('active')) return;
+
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    document.body.style.overflow = lightboxPreviousOverflow;
+
+    if (lightboxTrigger && typeof lightboxTrigger.focus === 'function') {
+        lightboxTrigger.focus();
+    }
+    lightboxTrigger = null;
+}
+
+function stepLightbox(step) {
+    if (lightboxItems.length < 2) return;
+    lightboxIndex = (lightboxIndex + step + lightboxItems.length) % lightboxItems.length;
+    renderLightbox();
+}
+
+projectCards.forEach(card => {
+    const zoomLink = card.querySelector('.project-zoom');
+    const cardImage = card.querySelector('.project-image');
+
+    if (zoomLink) {
+        zoomLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openLightbox(card, zoomLink);
+        });
+    }
+
+    if (cardImage) {
+        cardImage.style.cursor = 'zoom-in';
+        cardImage.addEventListener('click', (e) => {
+            // Los enlaces (WhatsApp y lupa) tienen su propio comportamiento
+            if (e.target.closest('a')) return;
+            openLightbox(card, zoomLink || cardImage);
+        });
+    }
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', () => stepLightbox(-1));
+lightboxNext.addEventListener('click', () => stepLightbox(1));
+
+// Clic en el fondo cierra el lightbox
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+        closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+        stepLightbox(-1);
+    } else if (e.key === 'ArrowRight') {
+        stepLightbox(1);
+    } else if (e.key === 'Tab') {
+        // Mantener el foco dentro del modal
+        const focusable = Array.from(lightbox.querySelectorAll('button:not([hidden])'));
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+});
+
+// Swipe táctil básico
+let touchStartX = 0;
+let touchStartY = 0;
+
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        stepLightbox(dx < 0 ? 1 : -1);
+    }
+}, { passive: true });
+
+// ========================================
 // BEFORE AFTER SLIDER
 // ========================================
 const comparisons = document.querySelectorAll('.comparison');
@@ -171,8 +335,14 @@ comparisons.forEach(comparison => {
     let isDown = false;
 
     // Set initial position
-    slider.style.left = '50%';
-    afterImage.style.width = '50%';
+    // La capa "Después" ocupa todo el ancho y se recorta desde la izquierda,
+    // así la mitad izquierda muestra "Antes" y la derecha "Después"
+    function setPosition(percent) {
+        slider.style.left = `${percent}%`;
+        afterImage.style.clipPath = `inset(0 0 0 ${percent}%)`;
+    }
+
+    setPosition(50);
 
     // Mouse events
     slider.addEventListener('mousedown', (e) => {
@@ -191,8 +361,7 @@ comparisons.forEach(comparison => {
         const x = e.clientX - rect.left;
         const percent = Math.max(0, Math.min(100, x / rect.width * 100));
 
-        slider.style.left = `${percent}%`;
-        afterImage.style.width = `${percent}%`;
+        setPosition(percent);
     });
 
     // Touch events
@@ -212,8 +381,7 @@ comparisons.forEach(comparison => {
         const x = e.touches[0].clientX - rect.left;
         const percent = Math.max(0, Math.min(100, x / rect.width * 100));
 
-        slider.style.left = `${percent}%`;
-        afterImage.style.width = `${percent}%`;
+        setPosition(percent);
 
         e.preventDefault();
     }, { passive: false });

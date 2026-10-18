@@ -30,9 +30,8 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Galería ampliada con categorías nuevas (techumbres, cercos/portones).
 - Testimonios: se quitan los rostros IA (avatar con iniciales).
 - Se eliminan las imágenes IA que quedan sin uso.
-- Algunas fotos de `obras/` quedan reservadas (sin usar) para la galería con lightbox de la Fase 3.
 
-### Fase 2 — Contenido y confianza (Haiku) ✅
+### Fase 2 — Contenido y confianza (Haiku) ✅ (en main)
 - Canonical, `og:url` y `twitter:url` apuntan al dominio `https://byfconstrucciones.cl/`.
 - Schema `GeneralContractor` con dirección, horario y área de servicio.
 - Se quitó `aggregateRating` (reseñas no verificables).
@@ -40,10 +39,12 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - `robots.txt` y `sitemap.xml` agregados.
 - Pendiente del dueño: confirmar "+15 años" y entregar testimonios reales (nombre y comuna).
 
-### Fase 3 — Galería y lightbox (Sonnet)
-- Filtros acordes a las categorías reales (Cocinas, Techumbres, Cercos, Revestimientos, Comercial).
-- Lightbox accesible en vez de abrir la imagen en otra pestaña.
-- Botón WhatsApp de cada proyecto con mensaje prellenado (`wa.me`).
+### Fase 3 — Galería y lightbox (Sonnet) ✅
+- Filtros acordes a las obras reales: Cocinas, Techumbres, Cercos y portones, Revestimientos y pisos, Otros.
+- Galería ampliada a 26 fotos reales, con categorías reasignadas según la foto.
+- Lightbox accesible propio (`role="dialog"`, foco gestionado, Escape, flechas, swipe táctil, contador y navegación solo entre las fotos visibles según el filtro).
+- `aria-label` en los botones de WhatsApp y de foto ampliada.
+- Antes/Después corregido: "Antes" a la izquierda y "Después" a la derecha.
 
 ### Fase 4 — Rendimiento (Sonnet)
 - Versiones WebP + `srcset` (800/1600 px), `width/height` para evitar saltos.

@@ -752,8 +752,8 @@ header.scrolled {
 }
 
 .after-image {
-    width: 50%;
-    border-right: 2px solid white;
+    /* Capa superior a ancho completo; el JS la recorta desde la izquierda */
+    clip-path: inset(0 0 0 50%);
 }
 
 .slider {
@@ -1330,5 +1330,124 @@ header.scrolled {
     .projects-grid,
     .before-after-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 56px 12px 16px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-figure {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-top: 12px;
+    color: white;
+    font-size: 1rem;
+}
+
+.lightbox-title {
+    font-weight: 600;
+}
+
+.lightbox-counter {
+    color: var(--light-color);
+    white-space: nowrap;
+}
+
+.lightbox-close,
+.lightbox-nav {
+    border: none;
+    cursor: pointer;
+    color: var(--dark-color);
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.lightbox-nav {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+}
+
+.lightbox-nav[hidden] {
+    display: none;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 56px 8px 16px;
+        gap: 6px;
+    }
+
+    .lightbox-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lightbox-img {
+        max-height: calc(100vh - 140px);
+    }
+
+    .lightbox-caption {
+        font-size: 0.9rem;
     }
 }
