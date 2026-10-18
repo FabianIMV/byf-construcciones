@@ -214,7 +214,16 @@ header.scrolled {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
+    isolation: isolate;
+    background-color: var(--dark-color);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 100%);
+    z-index: 0;
 }
 
 .hero-bg {
@@ -582,6 +591,23 @@ header.scrolled {
     border: 5px solid rgba(230, 126, 34, 0.2);
 }
 
+.client-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 5px solid rgba(230, 126, 34, 0.2);
+    background-clip: padding-box;
+}
+
 .client-image img {
     width: 100%;
     height: 100%;
@@ -690,6 +716,13 @@ header.scrolled {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
+}
+
+.comparison-title {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 .comparison {
