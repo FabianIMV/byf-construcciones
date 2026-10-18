@@ -37,7 +37,7 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Se quitó `aggregateRating` (reseñas no verificables).
 - README limpio (se eliminó la plantilla de GitLab).
 - `robots.txt` y `sitemap.xml` agregados.
-- Pendiente del dueño: confirmar "+15 años" y entregar testimonios reales (nombre y comuna).
+- Confirmado: más de 30 años de oficio. Testimonios eliminados hasta tener reseñas reales en Google.
 
 ### Fase 3 — Galería y lightbox (Sonnet) ✅ (en main)
 - Filtros acordes a las obras reales: Cocinas, Techumbres, Cercos y portones, Revestimientos y pisos, Otros.
@@ -65,7 +65,7 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Sección "Preguntas frecuentes" (`#faq`) con `<details>` y JSON-LD `FAQPage`.
 - `llms.txt` en la raíz con datos del negocio y enlaces a secciones.
 
-### Fase 6 — Accesibilidad y pulido (Haiku) ✅
+### Fase 6 — Accesibilidad y pulido (Haiku) ✅ (en main)
 - Footer: columna "Servicios" con los servicios reales (enlazados a `#projects` y `#services`) y "Preguntas frecuentes" (`#faq`) en "Enlaces Rápidos".
 - Año del copyright dinámico (`#year`, con `new Date().getFullYear()` en `script.js`).
 - Enlace "Saltar al contenido" (`.skip-link`), visible solo con foco; el contenido principal va en `<main id="contenido">`.
@@ -80,5 +80,4 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Subir fotos de obras al perfil (las de `assets/images/obras/`).
 - Agregar los servicios en el perfil.
 - Pedir reseñas a clientes con el enlace "Solicitar opiniones".
-- Confirmar el horario de cierre.
 - Verificar que el sitio web del perfil sea https://byfconstrucciones.cl.

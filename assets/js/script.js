@@ -64,67 +64,6 @@ if (hamburger && navMenu) {
 }
 
 // ========================================
-// TESTIMONIAL SLIDER
-// ========================================
-const slides = document.querySelectorAll('.testimonial-slide');
-const dots = document.querySelectorAll('.dot');
-const prev = document.querySelector('.testimonial-prev');
-const next = document.querySelector('.testimonial-next');
-let currentSlide = 0;
-let testimonialInterval;
-
-function showSlide(n) {
-    if (slides.length === 0) return;
-    
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-
-    currentSlide = (n + slides.length) % slides.length;
-
-    slides[currentSlide].classList.add('active');
-    if (dots[currentSlide]) {
-        dots[currentSlide].classList.add('active');
-    }
-}
-
-function startTestimonialSlider() {
-    testimonialInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-}
-
-function stopTestimonialSlider() {
-    clearInterval(testimonialInterval);
-}
-
-if (prev && next) {
-    prev.addEventListener('click', () => {
-        stopTestimonialSlider();
-        showSlide(currentSlide - 1);
-        startTestimonialSlider();
-    });
-
-    next.addEventListener('click', () => {
-        stopTestimonialSlider();
-        showSlide(currentSlide + 1);
-        startTestimonialSlider();
-    });
-}
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        stopTestimonialSlider();
-        showSlide(index);
-        startTestimonialSlider();
-    });
-});
-
-// Start auto-slide
-if (slides.length > 0) {
-    startTestimonialSlider();
-}
-
-// ========================================
 // PROJECT FILTERS
 // ========================================
 const filterBtns = document.querySelectorAll('.filter-btn');
