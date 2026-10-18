@@ -76,6 +76,20 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - `@media (prefers-reduced-motion: reduce)` que desactiva animaciones, transiciones y el scroll suave.
 - Pendiente: revisión en móvil real y Lighthouse ≥ 90 (no medidos en esta fase).
 
+### Fase 7 — UI orientada a conversión ✅
+- Hero rediseñado: subtítulo "Maestro constructor en Macul · Más de 30 años de oficio", H1 concreto, CTA grande verde "Pedir presupuesto por WhatsApp" + "Llamar", y 3 sellos de confianza (30 años de oficio, presupuesto sin compromiso, trato directo con el maestro). CTA a ancho completo y apilados en móvil.
+- Franja de confianza bajo el hero (4 ítems, 2 columnas en móvil).
+- Nosotros reescrito como historia de don Fabián Muñoz Andaur (empezó a los 18 años, 51 años hoy, más de 30 de oficio), con 4 puntos sin promesas de garantía, plazos ni cifras.
+- Servicios reales (cocinas, techumbres y hojalatería, cercos y portones, revestimientos y pisos, eléctricas, mantenciones) con foto propia y botón "Cotizar este servicio" que abre WhatsApp con el servicio en el mensaje; se eliminan los servicios genéricos y los enlaces sin destino. Nota visible: los valores se cotizan tras evaluar el espacio, sin publicar precios.
+- Nueva sección "Cómo trabajamos" (`#proceso`) con 4 pasos y CTA.
+- Galería: 9 fotos iniciales por filtro y botón "Ver más trabajos"; al cambiar de filtro vuelve a 9; el lightbox recorre solo las tarjetas visibles. Orden intercalado por categoría para que las primeras 9 muestren variedad. Subtítulo "Fotos reales de trabajos hechos por nosotros."
+- CTA final antes de las preguntas frecuentes (WhatsApp + llamar).
+- Barra fija inferior en móvil (≤768px) con "Llamar" y "WhatsApp"; se oculta el botón flotante de WhatsApp en móvil y el body tiene espacio inferior.
+- Menú: "Cómo trabajamos" y "Trabajos" (reemplaza "Proyectos" y "Antes/Después" en el menú); botón verde "Cotizar" en el header; menú hamburguesa ahora hasta 992px para que no se desborde.
+- Fondos alternados entre secciones, títulos más grandes, botones táctiles de al menos 48px; un solo H1 (el logo pasa a `div`).
+- Footer con línea "Macul, Santiago · Lu–Vi 9:00–18:00 · Sá 9:00–13:00" y texto actualizado.
+- FAQ y FAQPage JSON-LD con la nota de valores; JSON-LD con `founder` (Fabián Muñoz Andaur); `llms.txt` actualizado.
+
 ## Pendientes en el Perfil de Google (los hace el dueño)
 - Subir fotos de obras al perfil (las de `assets/images/obras/`).
 - Agregar los servicios en el perfil.

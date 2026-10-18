@@ -1,22 +1,25 @@
 # ByF Construcciones
 
 > Contratista general en Macul, Santiago de Chile: remodelaciones, techumbres, cercos y portones, cocinas, revestimientos, instalaciones eléctricas y mantenciones.
-> Presupuesto sin compromiso; se coordina por WhatsApp.
+> Negocio familiar de don Fabián Muñoz Andaur, maestro constructor con más de 30 años de oficio. Presupuesto sin compromiso; se coordina por WhatsApp.
 
 ## Datos del negocio
 
 - Nombre: ByF Construcciones, Remodelaciones y Mantenciones en Santiago
 - Categoría: Contratista general
+- Maestro constructor: don Fabián Muñoz Andaur (más de 30 años de oficio, atiende personalmente cada trabajo)
 - Dirección: Jorge González Bastías 4292, 7810000 Macul, Región Metropolitana, Chile
 - Teléfono / WhatsApp: +56 9 7987 3473 (https://wa.me/56979873473)
 - Horario: lunes a viernes 9:00-18:00; sábado 9:00-13:00
 - Comunas: Macul, Ñuñoa, Peñalolén, La Florida y otras comunas de la Región Metropolitana según el proyecto
 - Servicios: remodelación de cocinas, cambio y reparación de techumbres, hojalatería y canales, cercos y portones de madera y metal, revestimiento cerámico y pisos, instalaciones eléctricas, mantenciones
+- Precios: los valores dependen de cada trabajo; se cotizan después de evaluar el espacio, directamente con don Fabián por WhatsApp. El sitio no publica precios.
 - Sitio web: https://byfconstrucciones.cl
 
 ## Secciones del sitio
 
 - [Servicios](https://byfconstrucciones.cl/#services): trabajos que realizamos
-- [Proyectos](https://byfconstrucciones.cl/#projects): galería de obras reales
+- [Cómo trabajamos](https://byfconstrucciones.cl/#proceso): pasos desde el primer mensaje hasta la entrega
+- [Trabajos](https://byfconstrucciones.cl/#projects): galería de fotos reales de obras propias
 - [Preguntas frecuentes](https://byfconstrucciones.cl/#faq): comunas, presupuesto, cotización y horario
 - [Contacto](https://byfconstrucciones.cl/#contact): dirección, mapa y WhatsApp

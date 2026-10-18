@@ -68,6 +68,46 @@ if (hamburger && navMenu) {
 // ========================================
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const projectsMoreBtn = document.getElementById('projects-more');
+const INITIAL_PROJECTS = 9;
+
+let activeFilter = 'all';
+let projectsExpanded = false;
+
+// Muestra las tarjetas del filtro activo: las primeras 9, o todas si se pidió "Ver más trabajos"
+function applyProjectsView() {
+    let shown = 0;
+    let matching = 0;
+
+    projectCards.forEach(card => {
+        const matches = activeFilter === 'all' || card.getAttribute('data-category') === activeFilter;
+        let visible = false;
+
+        if (matches) {
+            matching++;
+            visible = projectsExpanded || matching <= INITIAL_PROJECTS;
+        }
+
+        if (visible) {
+            shown++;
+            if (card.style.display === 'none') {
+                card.style.animation = 'fadeIn 0.5s ease';
+                // Evita que AOS deje la tarjeta invisible si estaba oculta al iniciar
+                card.classList.add('aos-animate');
+            }
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+            card.style.animation = '';
+        }
+    });
+
+    if (projectsMoreBtn) {
+        projectsMoreBtn.hidden = projectsExpanded || matching <= INITIAL_PROJECTS;
+    }
+
+    return shown;
+}
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -76,28 +116,35 @@ filterBtns.forEach(btn => {
         // Add active class to clicked button
         btn.classList.add('active');
 
-        const filterValue = btn.getAttribute('data-filter');
+        activeFilter = btn.getAttribute('data-filter');
+        projectsExpanded = false;
+        applyProjectsView();
 
-        projectCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            
-            if (filterValue === 'all' || category === filterValue) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.5s ease';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
         // Track filter clicks
         if (typeof gtag !== 'undefined') {
             gtag('event', 'filter_click', {
                 'event_category': 'Projects',
-                'event_label': filterValue
+                'event_label': activeFilter
             });
         }
     });
 });
+
+if (projectsMoreBtn) {
+    projectsMoreBtn.addEventListener('click', () => {
+        const firstHidden = Array.from(projectCards).find(card => card.style.display === 'none'
+            && (activeFilter === 'all' || card.getAttribute('data-category') === activeFilter));
+        projectsExpanded = true;
+        applyProjectsView();
+
+        // El botón desaparece: el foco pasa a la primera foto nueva
+        const zoom = firstHidden && firstHidden.querySelector('.project-zoom');
+        if (zoom) zoom.focus({ preventScroll: true });
+    });
+}
+
+// Estado inicial: solo las primeras 9 tarjetas
+applyProjectsView();
 
 // ========================================
 // LIGHTBOX
