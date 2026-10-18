@@ -45,9 +45,11 @@ if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        const isOpen = navMenu.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
         
         // Prevent body scroll when menu is open
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close menu when clicking on a link
@@ -55,6 +57,7 @@ if (hamburger && navMenu) {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         });
     });
@@ -427,6 +430,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+
+            // "Saltar al contenido" también mueve el foco al destino
+            if (this.classList.contains('skip-link')) {
+                target.focus({ preventScroll: true });
+            }
         }
     });
 });
@@ -542,6 +550,14 @@ const fadeInAnimation = `
 const style = document.createElement('style');
 style.textContent = fadeInAnimation;
 document.head.appendChild(style);
+
+// ========================================
+// AÑO DINÁMICO (COPYRIGHT)
+// ========================================
+const yearEl = document.getElementById('year');
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
 // ========================================
 // ERROR HANDLING

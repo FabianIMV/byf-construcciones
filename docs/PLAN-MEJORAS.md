@@ -55,7 +55,7 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Se quita el `preconnect` a Google Fonts, que no se usaba (el sitio usa fuentes del sistema).
 - `aos.js` y `script.js` con `defer`.
 
-### Fase 5 — SEO local y conversión (Sonnet + Haiku) ✅
+### Fase 5 — SEO local y conversión (Sonnet + Haiku) ✅ (en main)
 - Sin redes sociales: se eliminan los bloques de Facebook/Twitter/Instagram/LinkedIn y los meta `twitter:*`; en el footer queda un botón "Escríbanos por WhatsApp".
 - Todos los botones de cotizar apuntan a `wa.me` con mensaje prellenado; las tarjetas de galería incluyen el título del proyecto (armado por JS, con href genérico de respaldo).
 - Contacto con datos del Perfil de Google: Jorge González Bastías 4292, Macul; horario Lu-Vi 9:00-18:00 y Sá 9:00-13:00; teléfono clicable.
@@ -65,9 +65,16 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Sección "Preguntas frecuentes" (`#faq`) con `<details>` y JSON-LD `FAQPage`.
 - `llms.txt` en la raíz con datos del negocio y enlaces a secciones.
 
-### Fase 6 — Accesibilidad y QA (Haiku)
-- `alt` descriptivos, contraste, foco visible, navegación con teclado.
-- Revisión en móvil y Lighthouse ≥ 90.
+### Fase 6 — Accesibilidad y pulido (Haiku) ✅
+- Footer: columna "Servicios" con los servicios reales (enlazados a `#projects` y `#services`) y "Preguntas frecuentes" (`#faq`) en "Enlaces Rápidos".
+- Año del copyright dinámico (`#year`, con `new Date().getFullYear()` en `script.js`).
+- Enlace "Saltar al contenido" (`.skip-link`), visible solo con foco; el contenido principal va en `<main id="contenido">`.
+- Menú móvil como `<button>` con `aria-label`, `aria-expanded` (se actualiza al abrir y cerrar) y `aria-controls="menu-principal"`.
+- Flechas del slider de testimonios como `<button>` con `aria-label`; slider antes/después con `role="img"` y nombre accesible.
+- `aria-hidden="true"` en todos los iconos decorativos `<i class="fa...">`.
+- Foco visible global (`a`, `button`, `summary`) con `--accent-color`, outline 3px y offset 2px.
+- `@media (prefers-reduced-motion: reduce)` que desactiva animaciones, transiciones y el scroll suave.
+- Pendiente: revisión en móvil real y Lighthouse ≥ 90 (no medidos en esta fase).
 
 ## Pendientes en el Perfil de Google (los hace el dueño)
 - Subir fotos de obras al perfil (las de `assets/images/obras/`).

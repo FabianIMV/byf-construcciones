@@ -230,6 +230,8 @@
 </head>
 
 <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -244,12 +246,12 @@
                         <span>CONSTRUCCIONES</span>
                     </div>
                 </div>
-                <div class="hamburger">
+                <button type="button" class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
-                <nav class="nav-menu">
+                </button>
+                <nav class="nav-menu" id="menu-principal">
                     <ul class="nav-list">
                         <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
                         <li class="nav-item"><a href="#about" class="nav-link">Nosotros</a></li>
@@ -259,13 +261,15 @@
                         <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
                     </ul>
                     <div class="nav-phone">
-                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         <span>+569 7987 3473</span>
                     </div>
                 </nav>
             </div>
         </div>
     </header>
+
+    <main id="contenido" tabindex="-1">
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -285,7 +289,7 @@
                        target="_blank" 
                        rel="noopener"
                        aria-label="Contactar por WhatsApp">
-                        <i class="fab fa-whatsapp"></i> Cotizar Gratis
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar Gratis
                     </a>
                     <a href="#projects" class="btn btn-secondary">Ver Proyectos</a>
                 </div>
@@ -312,7 +316,7 @@
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-medal"></i>
+                                <i class="fas fa-medal" aria-hidden="true"></i>
                             </div>
                             <div class="feature-text">
                                 <h4>Calidad Garantizada</h4>
@@ -321,7 +325,7 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-hard-hat"></i>
+                                <i class="fas fa-hard-hat" aria-hidden="true"></i>
                             </div>
                             <div class="feature-text">
                                 <h4>Equipo Profesional</h4>
@@ -330,7 +334,7 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-clock" aria-hidden="true"></i>
                             </div>
                             <div class="feature-text">
                                 <h4>Puntualidad</h4>
@@ -339,7 +343,7 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-hand-holding-usd"></i>
+                                <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
                             </div>
                             <div class="feature-text">
                                 <h4>Precios Competitivos</h4>
@@ -352,7 +356,7 @@
                        target="_blank"
                        rel="noopener"
                        aria-label="Solicitar presupuesto por WhatsApp">
-                        <i class="fab fa-whatsapp"></i> Solicitar Presupuesto Gratis
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Presupuesto Gratis
                     </a>
                 </div>
             </div>
@@ -378,7 +382,7 @@
                         <h3 class="service-title">Construcción Residencial</h3>
                         <p class="service-description">Construimos la casa de sus sueños, desde el diseño hasta la
                             entrega final, con atención a cada detalle.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -392,7 +396,7 @@
                         <h3 class="service-title">Remodelaciones</h3>
                         <p class="service-description">Transformamos espacios existentes en lugares modernos y
                             funcionales según sus necesidades.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
@@ -406,7 +410,7 @@
                         <h3 class="service-title">Construcción Comercial</h3>
                         <p class="service-description">Creamos espacios comerciales atractivos y funcionales para
                             impulsar su negocio.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
@@ -420,7 +424,7 @@
                         <h3 class="service-title">Diseño Arquitectónico</h3>
                         <p class="service-description">Desarrollamos proyectos arquitectónicos personalizados que
                             reflejan su estilo y necesidades.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
@@ -434,7 +438,7 @@
                         <h3 class="service-title">Diseño de Interiores</h3>
                         <p class="service-description">Creamos ambientes internos estéticos y funcionales que se adaptan
                             a su estilo de vida.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
@@ -448,7 +452,7 @@
                         <h3 class="service-title">Mantenimiento</h3>
                         <p class="service-description">Ofrecemos servicios de mantenimiento preventivo y correctivo para
                             sus espacios.</p>
-                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="service-link">Más Información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -940,8 +944,8 @@
                                 <img src="assets/images/obras/cocinas/cocina-terminada-refrigerador.jpg" width="960" height="1280" alt="Cocina después de la remodelación" loading="lazy">
                             </picture>
                         </div>
-                        <div class="slider">
-                            <i class="fas fa-arrows-alt-h"></i>
+                        <div class="slider" role="img" aria-label="Control deslizante para comparar antes y después">
+                            <i class="fas fa-arrows-alt-h" aria-hidden="true"></i>
                         </div>
                         <div class="labels">
                             <span class="before-label">Antes</span>
@@ -964,8 +968,8 @@
                                 <img src="assets/images/obras/revestimientos/ceramica-muros-terminada.jpg" width="899" height="1599" alt="Muros con revestimiento cerámico terminado" loading="lazy">
                             </picture>
                         </div>
-                        <div class="slider">
-                            <i class="fas fa-arrows-alt-h"></i>
+                        <div class="slider" role="img" aria-label="Control deslizante para comparar antes y después">
+                            <i class="fas fa-arrows-alt-h" aria-hidden="true"></i>
                         </div>
                         <div class="labels">
                             <span class="before-label">Antes</span>
@@ -988,8 +992,8 @@
                                 <img src="assets/images/obras/techumbres/techumbre-terminada.jpg" width="1599" height="899" alt="Techumbre nueva terminada" loading="lazy">
                             </picture>
                         </div>
-                        <div class="slider">
-                            <i class="fas fa-arrows-alt-h"></i>
+                        <div class="slider" role="img" aria-label="Control deslizante para comparar antes y después">
+                            <i class="fas fa-arrows-alt-h" aria-hidden="true"></i>
                         </div>
                         <div class="labels">
                             <span class="before-label">Antes</span>
@@ -1045,12 +1049,12 @@
                         <p>Cliente Residencial</p>
                     </div>
                 </div>
-                <div class="testimonial-prev">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="testimonial-next">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
+                <button type="button" class="testimonial-prev" aria-label="Testimonio anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="testimonial-next" aria-label="Testimonio siguiente">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
                 <div class="testimonial-dots">
                     <span class="dot active" data-slide="0"></span>
                     <span class="dot" data-slide="1"></span>
@@ -1105,7 +1109,7 @@
                     <h3 class="contact-title">Información de Contacto</h3>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <div class="contact-text">
                             <h4>Dirección</h4>
@@ -1114,7 +1118,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         </div>
                         <div class="contact-text">
                             <h4>Teléfono</h4>
@@ -1123,7 +1127,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
@@ -1132,7 +1136,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <div class="contact-text">
                             <h4>Horario</h4>
@@ -1152,6 +1156,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1170,32 +1176,33 @@
                         <li><a href="#services">Servicios</a></li>
                         <li><a href="#projects">Proyectos</a></li>
                         <li><a href="#before-after">Antes/Después</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
                         <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
                     <h3 class="footer-title">Servicios</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Construcción Residencial</a></li>
-                        <li><a href="#">Remodelaciones</a></li>
-                        <li><a href="#">Construcción Comercial</a></li>
-                        <li><a href="#">Diseño Arquitectónico</a></li>
-                        <li><a href="#">Diseño de Interiores</a></li>
-                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#projects">Remodelación de cocinas</a></li>
+                        <li><a href="#projects">Techumbres y hojalatería</a></li>
+                        <li><a href="#projects">Cercos y portones</a></li>
+                        <li><a href="#projects">Revestimientos y pisos</a></li>
+                        <li><a href="#projects">Instalaciones eléctricas</a></li>
+                        <li><a href="#services">Mantenciones</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 BYF Construcciones. Todos los derechos reservados. | Diseñado para ofrecer calidad y confianza.</p>
+                <p>&copy; <span id="year">2026</span> BYF Construcciones. Todos los derechos reservados. | Diseñado para ofrecer calidad y confianza.</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
     <!-- WhatsApp Floating Button -->
@@ -1204,7 +1211,7 @@
        target="_blank" 
        rel="noopener"
        aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <!-- Scripts -->
