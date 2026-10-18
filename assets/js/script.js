@@ -469,9 +469,21 @@ if (contactForm) {
 }
 
 // ========================================
+// WHATSAPP: MENSAJE CON EL TITULO DEL PROYECTO
+// ========================================
+document.querySelectorAll('.project-card').forEach(card => {
+    const title = card.querySelector('.project-title');
+    const link = card.querySelector('a[href*="wa.me"]');
+    if (title && link) {
+        const text = "Hola, vi el trabajo '" + title.textContent.trim() + "' y quisiera cotizar algo similar";
+        link.href = 'https://wa.me/56979873473?text=' + encodeURIComponent(text);
+    }
+});
+
+// ========================================
 // WHATSAPP CLICK TRACKING
 // ========================================
-document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(link => {
     link.addEventListener('click', () => {
         if (typeof gtag !== 'undefined') {
             gtag('event', 'click', {

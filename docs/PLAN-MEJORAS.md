@@ -46,7 +46,7 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - `aria-label` en los botones de WhatsApp y de foto ampliada.
 - Antes/Después corregido: "Antes" a la izquierda y "Después" a la derecha.
 
-### Fase 4 — Rendimiento (Sonnet) ✅
+### Fase 4 — Rendimiento (Sonnet) ✅ (en main)
 - Todas las fotos en `<picture>` con WebP (`-800.webp` 800w y `.webp` 1600w) y JPG como respaldo; `sizes` ajustado a cada sección.
 - `width`/`height` intrínsecos en cada `<img>`; el CSS sigue controlando el tamaño (`picture { display: contents }`).
 - Hero con `fetchpriority="high"` y `<link rel="preload">` de la imagen WebP.
@@ -55,10 +55,23 @@ Se seleccionaron 35 de 69 fotos (se descartaron duplicados, desenfocadas y detal
 - Se quita el `preconnect` a Google Fonts, que no se usaba (el sitio usa fuentes del sistema).
 - `aos.js` y `script.js` con `defer`.
 
-### Fase 5 — SEO local y conversión (Sonnet + Haiku)
-- Schema `LocalBusiness` completo (comuna/área de servicio, horario).
-- Formulario de contacto funcional (Formspree o WhatsApp) y botón flotante de WhatsApp.
+### Fase 5 — SEO local y conversión (Sonnet + Haiku) ✅
+- Sin redes sociales: se eliminan los bloques de Facebook/Twitter/Instagram/LinkedIn y los meta `twitter:*`; en el footer queda un botón "Escríbanos por WhatsApp".
+- Todos los botones de cotizar apuntan a `wa.me` con mensaje prellenado; las tarjetas de galería incluyen el título del proyecto (armado por JS, con href genérico de respaldo).
+- Contacto con datos del Perfil de Google: Jorge González Bastías 4292, Macul; horario Lu-Vi 9:00-18:00 y Sá 9:00-13:00; teléfono clicable.
+- Mapa de Google embebido (sin API key) y botones "Cómo llegar" y "Ver opiniones en Google".
+- `<head>`: title y description con Macul/Santiago, meta geo, `og:locale` y `og:site_name`.
+- JSON-LD `GeneralContractor` con nombre exacto del perfil, `@id`, dirección completa, `geo`, `hasMap`, `openingHoursSpecification`, `areaServed`, `knowsAbout` y `makesOffer` (sin `sameAs` ni `aggregateRating`).
+- Sección "Preguntas frecuentes" (`#faq`) con `<details>` y JSON-LD `FAQPage`.
+- `llms.txt` en la raíz con datos del negocio y enlaces a secciones.
 
 ### Fase 6 — Accesibilidad y QA (Haiku)
 - `alt` descriptivos, contraste, foco visible, navegación con teclado.
 - Revisión en móvil y Lighthouse ≥ 90.
+
+## Pendientes en el Perfil de Google (los hace el dueño)
+- Subir fotos de obras al perfil (las de `assets/images/obras/`).
+- Agregar los servicios en el perfil.
+- Pedir reseñas a clientes con el enlace "Solicitar opiniones".
+- Confirmar el horario de cierre.
+- Verificar que el sitio web del perfil sea https://byfconstrucciones.cl.
